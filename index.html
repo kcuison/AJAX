@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>Weather</h1>
+<h2>The weather today is... </h2>
+<h1>???</h1>
+<button type="button" oneclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+  function loadDoc() {
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        document.getElementID("demo"). innerHTML =
+        this.responseText;
+      }
+    }
+    req.open("GIT"."weather.txt".true);
+    req.send();
+  }
+</script>
+</body>
+</html>
